@@ -10,7 +10,7 @@ const routes: Routes = [
     component: PageLandingComponent,
   },
   {
-    path: 'application',
+    path: 'application/:appid',
     component: PageApplicationComponent,
   },
   {

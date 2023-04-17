@@ -9,10 +9,23 @@ import { PageApplicationComponent } from './pages/page-application/page-applicat
 import { PageOutcomeComponent } from './pages/page-outcome/page-outcome.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, PageLandingComponent, PageApplicationComponent, PageOutcomeComponent, DialogComponent],
-  imports: [BrowserModule, AppRoutingModule, MaterialModule, BrowserAnimationsModule],
+  declarations: [
+    AppComponent,
+    PageLandingComponent,
+    PageApplicationComponent,
+    PageOutcomeComponent,
+    DialogComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

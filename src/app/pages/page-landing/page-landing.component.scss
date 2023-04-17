@@ -1,0 +1,25 @@
+.toolbar {
+  position: relative;
+  z-index: 10;
+  height: 10%;
+  mat-toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.8em;
+    a {
+      padding: 0 20px;
+    }
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 89%;
+  * > button {
+    padding: 30px;
+  }
+}
