@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BackendService } from 'src/app/api/backend.service';
 import { ILoanType, ISubmitForm } from 'src/app/interfaces/isubmit-form';
 
 @Component({
@@ -18,8 +19,23 @@ export class PageApplicationComponent implements OnInit {
     'mortgage',
     'personal',
   ];
-  constructor(private route: ActivatedRoute) {}
+  isRequesting = false;
+  constructor(private route: ActivatedRoute, private api: BackendService) {}
   ngOnInit(): void {
     this.applicationId = this.route.snapshot.paramMap.get('appid');
+  }
+
+  requestBalance() {
+    this.isRequesting = true;
+    this.api.getBalanceSheet(this.form).subscribe(
+      (v) => {
+        console.log(v);
+        this.isRequesting = false;
+      },
+      (err) => {
+        console.error(err);
+        this.isRequesting = false;
+      }
+    );
   }
 }
