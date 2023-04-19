@@ -55,7 +55,21 @@
   </p>
   <br />
   <p>Balance Sheet</p>
-  <p><button mat-button class="smoke">Request Balance</button></p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Provider</mat-label>
+      <mat-select [(ngModel)]="form.provider">
+        <mat-option *ngFor="let key of providerList" [value]="key">{{
+          key
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p>
+    <button mat-button class="smoke" [disabled]="!form.provider">
+      Request Balance
+    </button>
+  </p>
 </div>
 <br />
 <div></div>

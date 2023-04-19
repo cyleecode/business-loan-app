@@ -10,6 +10,7 @@ import { ILoanType, ISubmitForm } from 'src/app/interfaces/isubmit-form';
 export class PageApplicationComponent implements OnInit {
   applicationId!: string | null;
   form: ISubmitForm = {} as ISubmitForm;
+  providerList = ['Xero', 'MYOB'];
   loanType: keyof ILoanType = 'business';
   loanTypeList: Array<keyof ILoanType> = [
     'auto',

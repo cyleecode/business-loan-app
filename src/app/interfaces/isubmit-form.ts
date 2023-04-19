@@ -8,6 +8,7 @@ export interface ISubmitForm {
   job: string;
   loan_type: keyof ILoanType;
   loan_amount: number;
+  provider: string;
   balance_sheet: IBalanceSheet[];
 }
 
