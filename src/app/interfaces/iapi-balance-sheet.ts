@@ -6,5 +6,5 @@ export interface IBalanceSheet {
 }
 export interface IApiBalanceSheet {
   status: boolean;
-  sheet: IBalanceSheet[];
+  data: IBalanceSheet[];
 }
