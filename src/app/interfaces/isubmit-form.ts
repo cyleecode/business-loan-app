@@ -1,10 +1,21 @@
 export interface ISubmitForm {
-  name: string;
+  firstname: string;
+  lastname: string;
+  company: string;
   address: string;
   phone: string;
   income: number;
   job: string;
-  loan_type: ILoanType;
+  loan_type: keyof ILoanType;
+  loan_amount: number;
+  balance_sheet: IBalanceSheet[];
+}
+
+export interface IBalanceSheet {
+  year: number;
+  month: number;
+  profitOrLoss: number;
+  assetsValue: number;
 }
 
 export interface ILoanType {

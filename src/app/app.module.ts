@@ -10,6 +10,7 @@ import { PageOutcomeComponent } from './pages/page-outcome/page-outcome.componen
 import { DialogComponent } from './components/dialog/dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

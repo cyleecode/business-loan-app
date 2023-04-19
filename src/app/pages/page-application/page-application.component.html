@@ -1,49 +1,46 @@
 <div></div>
 <div class="container">
+  <p>Personal Details</p>
   <p>
     <mat-form-field appearance="outline">
       <mat-label>First Name</mat-label>
-      <input matInput placeholder="" />
+      <input matInput placeholder="" [(ngModel)]="form.firstname" />
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Last Name</mat-label>
-      <input matInput placeholder="" />
+      <input matInput placeholder="" [(ngModel)]="form.lastname" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Company</mat-label>
+      <input matInput placeholder="" [(ngModel)]="form.company" />
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Address</mat-label>
-      <input matInput placeholder="address" />
+      <input matInput placeholder="address" [(ngModel)]="form.address" />
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Phone</mat-label>
-      <input matInput placeholder="+65" />
+      <input matInput placeholder="+65" [(ngModel)]="form.phone" />
     </mat-form-field>
   </p>
   <br />
+  <p>Loan Details</p>
   <p>
     <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder" />
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder" />
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder" />
-      <mat-hint>Hint</mat-hint>
+      <mat-label>Loan Amount</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        [(ngModel)]="form.loan_amount"
+      />
     </mat-form-field>
   </p>
 </div>
