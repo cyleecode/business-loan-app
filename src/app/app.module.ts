@@ -11,6 +11,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FormReviewComponent } from './components/form-review/form-review.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     PageApplicationComponent,
     PageOutcomeComponent,
     DialogComponent,
+    FormReviewComponent,
   ],
   imports: [
     BrowserModule,
