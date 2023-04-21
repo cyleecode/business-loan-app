@@ -4,8 +4,14 @@ import { IApiStart } from '../interfaces/iapi-start';
 import { Observable } from 'rxjs';
 import { IApiBalanceSheet } from '../interfaces/iapi-balance-sheet';
 import { ISubmitApplication } from '../interfaces/isubmit-application';
-import { ISubmitForm } from '../interfaces/isubmit-form';
+import { IBalanceSheet, ISubmitForm } from '../interfaces/isubmit-form';
 import { environment } from 'src/environments/environment.development';
+
+interface ISubmitPayload{
+  personalDetails: ISubmitForm,
+  loan: number,
+  balanceSheet: IBalanceSheet[]
+}
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +35,11 @@ export class BackendService {
   }
 
   submitApplication(form: ISubmitForm): Observable<ISubmitApplication> {
-    return this.http.post<ISubmitApplication>(this.host + '/submit', form);
+    const payload:ISubmitPayload = {
+      personalDetails: form,
+      loan: form.loan_amount,
+      balanceSheet: form.balance_sheet
+    }
+    return this.http.post<ISubmitApplication>(this.host + '/submit', payload);
   }
 }
