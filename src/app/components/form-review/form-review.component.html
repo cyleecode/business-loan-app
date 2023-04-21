@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" #container>
   <h3>Review</h3>
   <p>Name: {{ form.firstname + " " + form.lastname }}</p>
   <p>Company: {{ form.company }}</p>
@@ -14,5 +14,11 @@
       {{ key.profitOrLoss }}
     </p>
     <p>Assets: {{ key.assetsValue }}</p>
+  </div>
+  <p></p>
+  <div class="bottom">
+    <div></div>
+    <button mat-raised-button (click)="submit()">Submit</button>
+    <div></div>
   </div>
 </div>

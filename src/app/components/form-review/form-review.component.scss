@@ -5,10 +5,24 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 0 50px;
+  padding: 20px 50px;
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .balance {
   padding-left: 20px;
+}
+
+.topview {
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+}
+
+.bottom {
+  display: flex;
+  width: 100%;
+  * {
+    flex: 1;
+  }
 }
