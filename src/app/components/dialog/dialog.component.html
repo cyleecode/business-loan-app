@@ -1,1 +1,8 @@
-<p>dialog works!</p>
+<div class="container">
+  <ng-template [cdkPortalOutlet]="componentPortal"> </ng-template>
+  <div class="close">
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>

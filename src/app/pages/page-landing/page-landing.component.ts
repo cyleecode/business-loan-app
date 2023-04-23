@@ -12,13 +12,13 @@ export class PageLandingComponent {
   constructor(private route: Router, private api: BackendService) {}
   async start() {
     if (isDevMode()) {
-      this.route.navigate([`application/:appid`, { appid: 'test' }]);
+      this.route.navigate([`application`, { appid: 'test' }]);
     } else {
       this.api.getStart().subscribe(
         (v) => {
           if (v.status) {
             const appid = v.data;
-            this.route.navigate([`application/:appid`, { appid: appid }]);
+            this.route.navigate([`application`, { appid: appid }]);
           }
         },
         (err) => {

@@ -6,6 +6,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { PortalModule } from '@angular/cdk/portal';
+
+const cdk = [PortalModule];
 
 const material = [
   ReactiveFormsModule,
@@ -14,11 +19,13 @@ const material = [
   MatFormFieldModule,
   MatInputModule,
   MatSelectModule,
+  MatDialogModule,
+  MatIconModule,
 ];
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, material],
-  exports: [material],
+  imports: [CommonModule, material, cdk],
+  exports: [material, cdk],
 })
 export class MaterialModule {}

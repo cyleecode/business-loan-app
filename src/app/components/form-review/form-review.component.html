@@ -1,0 +1,24 @@
+<div class="container" #container>
+  <h3>Review</h3>
+  <p>Name: {{ form.firstname + " " + form.lastname }}</p>
+  <p>Company: {{ form.company }}</p>
+  <p>Address: {{ form.address }}</p>
+  <p>Phone: {{ form.phone }}</p>
+  <p>Loan Type: {{ form.loan_type }}</p>
+  <p>Loan Amount: {{ form.loan_amount }}</p>
+  <p>Balance Sheet:</p>
+  <div *ngFor="let key of form.balance_sheet" class="balance">
+    <p>YYYY/MM: {{ key.year }}/{{ key.month }}</p>
+    <p>
+      {{ isPositive(key.profitOrLoss) ? "Profit: " : "Loss: " }}
+      {{ key.profitOrLoss }}
+    </p>
+    <p>Assets: {{ key.assetsValue }}</p>
+  </div>
+  <p></p>
+  <div class="bottom">
+    <div></div>
+    <button mat-raised-button (click)="submit()">Submit</button>
+    <div></div>
+  </div>
+</div>

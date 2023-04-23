@@ -1,1 +1,18 @@
-<p>page-outcome works!</p>
+<div class="container">
+  <div></div>
+  <div *ngIf="pending">Pending ...</div>
+  <div *ngIf="!pending && isSuccess">
+    <p>Your application has been approved!</p>
+    <p>
+      Please proceed to loan department to complete the remaining procedure.
+    </p>
+  </div>
+  <div *ngIf="!pending && !isSuccess">
+    <p>Application Not Successful</p>
+    <p>
+      We appreciate your interest, but unfortunately, your application did not
+      meet our criteria.
+    </p>
+  </div>
+  <div></div>
+</div>
