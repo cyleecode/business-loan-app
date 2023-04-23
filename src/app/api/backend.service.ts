@@ -7,10 +7,10 @@ import { ISubmitApplication } from '../interfaces/isubmit-application';
 import { IBalanceSheet, ISubmitForm } from '../interfaces/isubmit-form';
 import { environment } from 'src/environments/environment.development';
 
-interface ISubmitPayload{
-  personalDetails: ISubmitForm,
-  loan: number,
-  balanceSheet: IBalanceSheet[]
+interface ISubmitPayload {
+  personalDetails: ISubmitForm;
+  loan: number;
+  balanceSheet: IBalanceSheet[];
 }
 
 @Injectable({
@@ -21,7 +21,7 @@ export class BackendService {
   constructor(private http: HttpClient) {}
 
   getStart(): Observable<IApiStart> {
-    return this.http.get<IApiStart>(this.host + '/start');
+    return this.http.get<IApiStart>(this.host + '/application');
   }
 
   getBalanceSheet(form: ISubmitForm): Observable<IApiBalanceSheet> {
@@ -35,11 +35,11 @@ export class BackendService {
   }
 
   submitApplication(form: ISubmitForm): Observable<ISubmitApplication> {
-    const payload:ISubmitPayload = {
+    const payload: ISubmitPayload = {
       personalDetails: form,
       loan: form.loan_amount,
-      balanceSheet: form.balance_sheet
-    }
+      balanceSheet: form.balance_sheet,
+    };
     return this.http.post<ISubmitApplication>(this.host + '/submit', payload);
   }
 }
